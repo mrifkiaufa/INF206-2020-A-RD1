@@ -46,32 +46,51 @@
             font-size: 20px;
         }
 
+        .navbar-toggler-buatansendiri{
+            font-size:1.7rem;
+            line-height:1;
+            background-color:transparent;
+            border:1px solid transparent;
+            border-radius:.25rem;
+            transition:box-shadow .15s ease-in-out
+        }
+
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark grad py-1">
-        <div class="container-fluid">
-          <a class="navbar-brand judul" href="#">e-Zakat</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark grad">
+            <div class="container-fluid">
+                <a class="navbar-brand judul" href="#">e-Zakat</a>
+                <div class="navbar-nav nav-item navbar-collapse collapse">
+                    <a class="nav-link navbar-nav nav-item active" style="font-size: larger;" aria-current="page" href="#">Home</a>
+                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">About</a>
+                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">Contact</a>
+                    <button class="navbar-toggler-buatansendiri" type="button" data-bs-toggle="collapse" data-bs-target="#garisTiga" style="position: absolute; right: 2%;">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="collapse" id="garisTiga" style="position: absolute; right: 0px;">
+            <div class="grad p-3">
+                <a class="nav-link" style="color: white; font-size: large;" href="#">Profil</a>
+                <hr style="color: white; block-size: 3px;">
+                <a class="nav-link" style="color: white; font-size: large;" href="#">Dompet</a>
+                <hr style="color: white; block-size: 3px;">
+                <a class="nav-link" style="color: white; font-size: large;" href="#">Bayar</a>
+                <hr style="color: white; block-size: 3px;">
+                <a class="nav-link" style="color: white; font-size: large;" href="#">Keluar</a>
+            </div>
         </div>
+    </header>
+
+    @yield('isi')
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    </div>
       </nav>
 
     @yield('isi')
 
-</body>
-</html>
