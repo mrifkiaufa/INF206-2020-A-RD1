@@ -55,6 +55,20 @@
             transition:box-shadow .15s ease-in-out
         }
 
+        .button {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            background-color: white;
+            border: none;
+            color: rgba(86, 204, 242, 1);
+            padding: 8px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -66,6 +80,7 @@
                     <a class="nav-link navbar-nav nav-item active" style="font-size: larger;" aria-current="page" href="#">Home</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">About</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">Contact</a>
+                    <button class="button shadow">Masuk</button>
                     <button class="navbar-toggler-buatansendiri" type="button" data-bs-toggle="collapse" data-bs-target="#garisTiga" style="position: absolute; right: 2%;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
