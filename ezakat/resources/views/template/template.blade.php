@@ -10,6 +10,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
 
         .judul {
             font-family: Be Vietnam;
@@ -34,16 +35,41 @@
             background-position-y: 5%;
         }
 
-        h1 {
+        h1.artikel {
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
             color: rgba(32, 107, 139, 1);
         }
 
-        p {
+        h1.formulir {
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+            color: rgba(47, 128, 237, 1);
+        }
+
+        p.artikel {
             font-family: 'Roboto', sans-serif;
             color: rgba(59, 134, 167, 1);
             font-size: 20px;
+        }
+
+        p.formulir {
+            font-family: 'Nunito', sans-serif;
+            color: rgba(60, 136, 239, 1);
+            font-weight: normal;
+            font-size: 22px;
+        }
+
+        input {
+            background-color: rgb(62, 166, 211);;
+        }
+
+        #bor{
+            border-radius: 25px;
+            border: 4px solid rgba(42, 161, 211, 1);
+            background-color: white;
+            padding: 20px;
+            width: 500px;
         }
 
         .navbar-toggler-buatansendiri{
@@ -69,6 +95,20 @@
             border-radius: 50px;
         }
 
+        .button2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            background-color: rgba(86, 204, 242, 1);
+            border: none;
+            color: white;
+            padding: 8px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -77,13 +117,17 @@
             <div class="container-fluid">
                 <a class="navbar-brand judul" href="#">e-Zakat</a>
                 <div class="navbar-nav nav-item navbar-collapse collapse">
-                    <a class="nav-link navbar-nav nav-item active" style="font-size: larger;" aria-current="page" href="#">Home</a>
+                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" aria-current="page" href="{{ url('home') }}">Home</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">About</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">Contact</a>
-                    <button class="button shadow">Masuk</button>
+                    @guest
+                    <button class="button shadow" onclick="location.href='{{ url('login') }}'" style="position: absolute; right: 2%;">Masuk</button>
+                    @endguest
+                    @auth
                     <button class="navbar-toggler-buatansendiri" type="button" data-bs-toggle="collapse" data-bs-target="#garisTiga" style="position: absolute; right: 2%;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    @endauth
                 </div>
             </div>
         </nav>
@@ -92,11 +136,15 @@
             <div class="grad p-3">
                 <a class="nav-link" style="color: white; font-size: large;" href="#">Profil</a>
                 <hr style="color: white; block-size: 3px;">
-                <a class="nav-link" style="color: white; font-size: large;" href="#">Dompet</a>
-                <hr style="color: white; block-size: 3px;">
                 <a class="nav-link" style="color: white; font-size: large;" href="#">Bayar</a>
                 <hr style="color: white; block-size: 3px;">
-                <a class="nav-link" style="color: white; font-size: large;" href="#">Keluar</a>
+                <a class="nav-link" style="color: white; font-size: large;" href="#">Dompet</a>
+                <hr style="color: white; block-size: 3px;">
+                <a class="nav-link" style="color: white; font-size: large;" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </div>
         </div>
     </header>
