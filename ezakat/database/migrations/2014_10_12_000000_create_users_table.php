@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
             $table->boolean('pemberi');
             $table->boolean('penerima');
             $table->string('jenis')->default('user');
+            $table->boolean('tombol_profile')->default(false);
+            $table->boolean('tombol_bayar')->default(false);
+            $table->boolean('tombol_dompet')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
