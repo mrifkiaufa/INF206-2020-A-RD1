@@ -27,12 +27,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1908107010037.x-dev',
-    'version' => '1908107010037.9999999.9999999.9999999-dev',
+    'pretty_version' => '1908107010074.x-dev',
+    'version' => '1908107010074.9999999.9999999.9999999-dev',
     'aliases' => 
     array (
     ),
-    'reference' => '1b61eb3c710a394158d6959f1b715a5641775447',
+    'reference' => 'a3371430b64c5d922715658525351e3044c3a2d8',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -457,12 +457,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1908107010037.x-dev',
-      'version' => '1908107010037.9999999.9999999.9999999-dev',
+      'pretty_version' => '1908107010074.x-dev',
+      'version' => '1908107010074.9999999.9999999.9999999-dev',
       'aliases' => 
       array (
       ),
-      'reference' => '1b61eb3c710a394158d6959f1b715a5641775447',
+      'reference' => 'a3371430b64c5d922715658525351e3044c3a2d8',
     ),
     'laravel/sail' => 
     array (
