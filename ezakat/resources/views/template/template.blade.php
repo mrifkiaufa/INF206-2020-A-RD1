@@ -109,6 +109,71 @@
             border-radius: 50px;
         }
 
+        /* css untuk profil */
+        #card {
+            background: #fbfbfb;
+            border-radius: 20px;
+            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+            height: 570px;
+            margin: 2rem 17rem ;
+            width: 450px;
+            border: 1px solid #2F80ED;
+        }
+
+        #card-content {
+            padding: 12px 44px; 
+        }
+
+        #card-title {
+            font-family: "Nunito", sans-serif;
+            letter-spacing: 0px;
+            padding-bottom: 5px;
+            padding-top: 8px;
+            text-align: left;
+            color: #2F80ED; 
+        }
+
+        #submit-btn {
+            background: -webkit-linear-gradient(right, #56CCF2, #1572E5);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            color: white;
+            font-family: "Roboto", sans-serif;
+            height: 42.3px;
+            margin: 13rem;
+            margin-top: 6px;
+            width: 153px;
+        }
+
+        #submit-btn:hover {
+            box-shadow: 0px 1px 18px #56CCF2
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        label {
+            font-family: "Nunito", sans-serif;
+            font-size: 13pt;
+            color: #2F80ED; 
+        }
+
+        input{
+            outline: none;
+            background: #fbfbfb;
+            padding: 6px 8px;
+            border-radius: 10px;
+            font-size: 16px;
+            display: block;
+            border: 1px solid #2F80ED;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            height: 35px;
+            width: 350px;
+        }
+
     </style>
 </head>
 <body>
@@ -134,7 +199,7 @@
 
         <div class="collapse" id="garisTiga" style="position: absolute; right: 0px;">
             <div class="grad p-3">
-                <a class="nav-link" style="color: white; font-size: large;" href="#">Profil</a>
+                <a class="nav-link" style="color: white; font-size: large;" href="{{ url('profil') }}">Profil</a>
                 <hr style="color: white; block-size: 3px;">
                 <a class="nav-link" style="color: white; font-size: large;" href="#">Bayar</a>
                 <hr style="color: white; block-size: 3px;">
