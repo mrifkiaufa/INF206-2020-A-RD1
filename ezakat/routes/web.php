@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/contact', function () {
+    return view ('contact.contact');
+});
+
 Route::get('/profil', function () {
     return view ('profil.profil');
 });

@@ -184,7 +184,7 @@
                 <div class="navbar-nav nav-item navbar-collapse collapse">
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" aria-current="page" href="{{ url('home') }}">Home</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">About</a>
-                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">Contact</a>
+                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="{{ url('contact') }}">Contact</a>
                     @guest
                     <button class="button shadow" onclick="location.href='{{ url('login') }}'" style="position: absolute; right: 2%;">Masuk</button>
                     @endguest
