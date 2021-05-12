@@ -20,6 +20,13 @@ Route::get('/contact', function () {
     return view('contact.contact');
 });
 
+Route::get('/profil', function () {
+    return view ('profil.profil');
+});
+
+Route::get('/dompet', function () {
+    return view ('dompet.dompet');
+});
 
 Route::get('/', 'HomeController@index');
 
