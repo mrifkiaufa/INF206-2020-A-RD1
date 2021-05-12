@@ -121,7 +121,7 @@
         }
 
         #card-content {
-            padding: 12px 44px; 
+            padding: 12px 44px;
         }
 
         #card-title {
@@ -130,7 +130,7 @@
             padding-bottom: 5px;
             padding-top: 8px;
             text-align: left;
-            color: #2F80ED; 
+            color: #2F80ED;
         }
 
         #submit-btn {
@@ -157,7 +157,7 @@
         label {
             font-family: "Nunito", sans-serif;
             font-size: 13pt;
-            color: #2F80ED; 
+            color: #2F80ED;
         }
 
         input{

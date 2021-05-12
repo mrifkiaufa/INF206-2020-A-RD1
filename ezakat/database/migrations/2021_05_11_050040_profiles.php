@@ -19,9 +19,9 @@ class Profiles extends Migration
             $table->string('nomorkk')->unique();
             $table->string('jumlah_keluarga');
             $table->string('alamat');
-            $table->integer('zakat_bayar');
+            $table->integer('zakat_bayar')->default(0);
             $table->boolean('status_bayar')->default(false);
-            $table->integer('zakat_terima');
+            $table->integer('zakat_terima')->default(0);
             $table->boolean('status_terima')->default(false);
             $table->integer('id_users');
             $table->timestamps();
