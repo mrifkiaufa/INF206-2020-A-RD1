@@ -36,3 +36,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profil', 'ProfilesController@create')->middleware('auth');
 Route::post('/profil', 'ProfilesController@store')->middleware('auth');
+
+Route ::get('/bayar', function(){
+    return view('bayar.bayar');
+});
+
+Route ::get('/statusBayar', function(){
+    return view('bayar.statusBayar');
+});
