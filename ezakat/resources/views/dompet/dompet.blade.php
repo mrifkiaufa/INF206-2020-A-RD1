@@ -1,5 +1,5 @@
 @extends('template.template')
-@section('title','About')
+@section('title','Dompet')
 
 @section('isi')
     <div class="container">
