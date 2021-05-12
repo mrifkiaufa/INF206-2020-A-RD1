@@ -26,6 +26,9 @@
             <button id="submit-btn" type="submit" name="submit" value="Simpan" />Simpan</button>
         </form>
         </div>
+        <div class="mt-4">
+            <h4 style="color: red">*Data yang sudah disimpan tidak bisa diedit lagi</h4>
+        </div>
     </div>
 
 @endsection
