@@ -11,6 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
 
         .judul {
             font-family: Be Vietnam;
@@ -41,6 +42,21 @@
             color: rgba(32, 107, 139, 1);
         }
 
+        h3.artikel {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: rgba(32, 107, 139, 1);
+
+        }
+
+        h4.artikel {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: rgba(32, 107, 139, 1);
+            font-size: 15pt;
+
+        }
+
         h1.formulir {
             font-family: 'Nunito', sans-serif;
             font-weight: bold;
@@ -51,6 +67,21 @@
             font-family: 'Roboto', sans-serif;
             color: rgba(59, 134, 167, 1);
             font-size: 20px;
+        }
+
+        p.arti {
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        p.art {
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            font-size: 17px;
+            line-height : 7; 
+            font-weight: bold;
         }
 
         p.formulir {
@@ -120,6 +151,46 @@
             border: 1px solid #2F80ED;
         }
 
+        #card-bayar {
+            background: #fbfbfb;
+            border-radius: 10px;
+            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+            height: 400px;
+            margin: 2rem 4rem ;
+            width: 800px;
+            border: 1px solid #2F80ED;
+            margin-top: 50px;
+        }
+
+        #card-status {
+            background: #F3CFCF;
+            border-radius: 10px;
+            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+            height: 300px;
+            margin: 2rem 4rem ;
+            width: 600px;
+            border: 1px solid #2F80ED;
+            margin-top: 30px;
+        }
+
+        #box{
+            width : 450px;
+            height : 50px; 
+            background : #BDFFB2; 
+            border-radius : 5px; 
+            font-size : 25px; 
+            font-family: 'Roboto', sans-serif;
+            font-weight : bold; 
+            margin: 2rem 4rem ;
+            padding: 3px 15px;
+            margin-top: 120px;
+
+        }
+
+        #card-contentbay {
+            padding: 2px 5px;
+        }
+
         #card-content {
             padding: 12px 44px;
         }
@@ -148,6 +219,35 @@
 
         #submit-btn:hover {
             box-shadow: 0px 1px 18px #56CCF2
+        }
+
+        #submit-ovo {
+            background: #fbfbfb;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #4B4281;
+            font-family: "Ovo", sans-serif;
+            height: 40px;
+            margin-top: 12px;
+            width: 80px;
+            border: 1px solid #4B4281;
+            font-size: 18pt;
+            font-weight : 800; 
+        }
+
+        #submit-gopay {
+            background: #209825;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #000000;
+            font-family: "sans-serif", sans-serif;
+            height: 40px;
+            margin-top: 10px;
+            margin: 1rem 4rem ;
+            width: 90px;
+            border: 1px solid #000000;
+            font-size: 16pt;
+            font-weight : 800; 
         }
 
         a {
@@ -202,7 +302,7 @@
             <div class="grad p-3">
                 <a class="nav-link" style="color: white; font-size: large;" href="{{ url('profil') }}">Profil</a>
                 <hr style="color: white; block-size: 3px;">
-                <a class="nav-link" style="color: white; font-size: large;" href="#">Bayar</a>
+                <a class="nav-link" style="color: white; font-size: large;" href="{{ url('bayar') }}">Bayar</a>
                 <hr style="color: white; block-size: 3px;">
                 <a class="nav-link" style="color: white; font-size: large;" href="#">Dompet</a>
                 <hr style="color: white; block-size: 3px;">
