@@ -30,3 +30,7 @@ Route::get('/contact', function () {
 Route::get('/profil', function () {
     return view ('profil.profil');
 });
+
+Route::get('/dompet', function () {
+    return view ('dompet.dompet');
+});
