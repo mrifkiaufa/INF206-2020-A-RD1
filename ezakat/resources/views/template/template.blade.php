@@ -204,7 +204,7 @@
                 <hr style="color: white; block-size: 3px;">
                 <a class="nav-link" style="color: white; font-size: large;" href="#">Bayar</a>
                 <hr style="color: white; block-size: 3px;">
-                <a class="nav-link" style="color: white; font-size: large;" href="#">Dompet</a>
+                <a class="nav-link" style="color: white; font-size: large;" href="{{ url('dompet') }}">Dompet</a>
                 <hr style="color: white; block-size: 3px;">
                 <a class="nav-link" style="color: white; font-size: large;" href="{{ route('logout') }}"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
