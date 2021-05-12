@@ -3,10 +3,10 @@
 
 @section('isi')
 
-    <div id="card">
+<div id="card">
     <div id="card-content">
         <div id="card-title">
-        <h1 class="formulir mb-3">Isi Profil</h1>
+            <h1 class="formulir mb-3">Isi Profil</h1>
         </div>
         <form method="post" action="/profil" class="form">
             @csrf
@@ -25,10 +25,7 @@
 
             <button id="submit-btn" type="submit" name="submit" value="Simpan" />Simpan</button>
         </form>
-        </div>
-        <div class="mt-4">
-            <h4 style="color: red">*Data yang sudah disimpan tidak bisa diedit lagi</h4>
-        </div>
     </div>
+</div>
 
 @endsection
