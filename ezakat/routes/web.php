@@ -24,6 +24,10 @@ Route::get('/profil', function () {
     return view ('profil.profil');
 });
 
+Route ::get('/statusBayar', function(){
+    return view('bayar.statusBayar');
+});
+
 Route::get('/dompet', function () {
     return view ('dompet.dompet');
 });
@@ -41,6 +45,3 @@ Route ::get('/bayar', function(){
     return view('bayar.bayar');
 });
 
-Route ::get('/statusBayar', function(){
-    return view('bayar.statusBayar');
-});

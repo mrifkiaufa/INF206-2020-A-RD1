@@ -80,7 +80,7 @@
             font-family: 'Roboto', sans-serif;
             color: black;
             font-size: 17px;
-            line-height : 7; 
+            line-height : 7;
             font-weight: bold;
         }
 
@@ -175,12 +175,12 @@
 
         #box{
             width : 450px;
-            height : 50px; 
-            background : #BDFFB2; 
-            border-radius : 5px; 
-            font-size : 25px; 
+            height : 50px;
+            background : #BDFFB2;
+            border-radius : 5px;
+            font-size : 25px;
             font-family: 'Roboto', sans-serif;
-            font-weight : bold; 
+            font-weight : bold;
             margin: 2rem 4rem ;
             padding: 3px 15px;
             margin-top: 120px;
@@ -232,7 +232,7 @@
             width: 80px;
             border: 1px solid #4B4281;
             font-size: 18pt;
-            font-weight : 800; 
+            font-weight : 800;
         }
 
         #submit-gopay {
@@ -247,7 +247,7 @@
             width: 90px;
             border: 1px solid #000000;
             font-size: 16pt;
-            font-weight : 800; 
+            font-weight : 800;
         }
 
         a {
