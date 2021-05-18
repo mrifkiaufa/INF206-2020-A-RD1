@@ -140,7 +140,6 @@
             border-radius: 50px;
         }
 
-        /* css untuk profil */
         #card {
             background: #fbfbfb;
             border-radius: 20px;
@@ -184,7 +183,20 @@
             margin: 2rem 4rem ;
             padding: 3px 15px;
             margin-top: 120px;
+        }
 
+        #box-dompet {
+            width : 500px;
+            height : 45px;
+            background : #BDFFB2;
+            border-radius : 5px;
+            font-size : 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight : bold;
+            padding: 5px 80px;
+            margin-top: 5px;
+            margin-right : 10px; 
+            border: 1px solid #2F80ED;
         }
 
         #card-contentbay {
@@ -318,5 +330,6 @@
     @yield('isi')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+   
 <body>
 </html>
