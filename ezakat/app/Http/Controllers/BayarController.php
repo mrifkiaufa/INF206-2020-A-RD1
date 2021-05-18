@@ -7,6 +7,7 @@ use App\Models\Profile;
 use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BayarController extends Controller
 {
@@ -17,13 +18,20 @@ class BayarController extends Controller
      */
     public function index()
     {
-        $tombol = User::where('id', Auth::user()->id)->first()->tombol_bayar;
+        $tombol = User::where('id', Auth::user()->id)->first();
 
-        if($tombol == '1')
-            return view('bayar.statusBayar');
+        if ($tombol->tombol_profil == '1') {
+            if($tombol->tombol_bayar == '1')
+                return view('bayar.statusBayar');
 
-        else
-            return $this->create();
+            else
+                return $this->create();
+        }
+
+        else {
+            Alert::warning('Akses ditolak!', 'Mohon lengkapi profil terlebih dahulu');
+            return view('profil.profil');
+        }
     }
 
     /**

@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
+    'pretty_version' => '1908107010037.x-dev',
+    'version' => '1908107010037.9999999.9999999.9999999-dev',
     'aliases' => 
     array (
     ),
-    'reference' => '3449d6e8c1667ac623b02d3777fa52ad37650998',
+    'reference' => '4e634fc9d69b6880b93276c574909e0e2c1fa356',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -431,12 +431,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
+      'pretty_version' => '1908107010037.x-dev',
+      'version' => '1908107010037.9999999.9999999.9999999-dev',
       'aliases' => 
       array (
       ),
-      'reference' => '3449d6e8c1667ac623b02d3777fa52ad37650998',
+      'reference' => '4e634fc9d69b6880b93276c574909e0e2c1fa356',
     ),
     'laravel/sail' => 
     array (
@@ -760,8 +760,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -808,6 +808,15 @@
       array (
       ),
       'reference' => 'cd4032040a750077205918c86049aa0f43d22947',
+    ),
+    'realrashid/sweet-alert' => 
+    array (
+      'pretty_version' => 'v3.2.2',
+      'version' => '3.2.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2441267a295833480b2c8e55532f4190d1004d47',
     ),
     'rhumsaa/uuid' => 
     array (
