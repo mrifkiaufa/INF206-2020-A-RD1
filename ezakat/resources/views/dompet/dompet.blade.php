@@ -11,13 +11,13 @@
                         <tr >
                             <td> <h5 class="card-tittle p-3">No KK </h5> </td>
                             <td> <h5 class="card-tittle p-3">:</h5> </td>
-                            <td><h5 class="card-tittle p-3"> 729123498721 </h5></td>
+                            <td><h5 class="card-tittle p-3"> {{ $data->nomorkk }} </h5></td>
                         </tr>
 
                         <tr>
                             <td> <h5 class="card-tittle p-3">Nama </h5> </td>
                             <td> <h5 class="card-tittle p-3">:</h5> </td>
-                            <td><h5 class="card-tittle p-3"> Saiful Anwar </h5></td>
+                            <td><h5 class="card-tittle p-3"> {{ $data->nama }} </h5></td>
                         </tr>
 
                         <tr>
@@ -31,6 +31,6 @@
                 <div id="box-dompet" >Status Pengiriman : Sudah Terkirim </div>
                 <p class="pt-4" style="color: red; font-weight: bold;">*Zakat akan kami transfer sesuai dengan akun ovo/gopay yang sudah kamu isi sebelumnya.</p>
             </div>
-        </div> 
+        </div>
     </div>
 @endsection

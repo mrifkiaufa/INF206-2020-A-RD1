@@ -21,19 +21,14 @@ Route::get('/contact', function () {
     return view('contact.contact');
 });
 
-Route::get('/profil', function () {
-    return view ('profil.profil');
-});
-
-Route::get('/dompet', function () {
-    return view ('dompet.dompet');
-});
 
 Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/dompet', 'WalletsController@index')->middleware('auth');
 
 Route ::get('/bayar', 'BayarController@index')->middleware('auth');
 Route::get('/profil', 'ProfilesController@index')->middleware('auth');
