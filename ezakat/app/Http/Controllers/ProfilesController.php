@@ -17,7 +17,14 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        return view('profil.index');
+        $tombol = User::where('id', Auth::user()->id)->first()->tombol_profile;
+        $data = Profile::where('id_users', $tombol)->first();
+
+        if($tombol == '1')
+            return view('profil.index', compact('data'));
+
+        else
+            return $this->create();
     }
 
     /**
@@ -27,14 +34,7 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        $tombol = User::where('id', Auth::user()->id)->first()->tombol_profile;
-        $data = Profile::where('id_users', $tombol)->first();
-
-        if($tombol == '1')
-            return view('profil.index', compact('data'));
-
-        else
-            return view('profil.profil');
+        return view('profil.profil');
     }
 
     /**
