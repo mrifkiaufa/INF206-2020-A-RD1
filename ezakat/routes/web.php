@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,6 @@ Route::get('/profil', function () {
     return view ('profil.profil');
 });
 
-Route ::get('/statusBayar', function(){
-    return view('bayar.statusBayar');
-});
-
 Route::get('/dompet', function () {
     return view ('dompet.dompet');
 });
@@ -38,10 +35,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profil', 'ProfilesController@create')->middleware('auth');
+Route ::get('/bayar', 'BayarController@index')->middleware('auth');
+Route::get('/profil', 'ProfilesController@index')->middleware('auth');
+
+Route::post('/bayar', 'BayarController@store')->middleware('auth');
 Route::post('/profil', 'ProfilesController@store')->middleware('auth');
 
-Route ::get('/bayar', function(){
-    return view('bayar.bayar');
-});
 

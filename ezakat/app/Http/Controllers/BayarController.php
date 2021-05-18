@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\User;
+use App\Models\Wallet;
 use Illuminate\Support\Facades\Auth;
 
-
-class ProfilesController extends Controller
+class BayarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,10 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        $tombol = User::where('id', Auth::user()->id)->first()->tombol_profile;
-        $data = Profile::where('id_users', $tombol)->first();
+        $tombol = User::where('id', Auth::user()->id)->first()->tombol_bayar;
 
         if($tombol == '1')
-            return view('profil.index', compact('data'));
+            return view('bayar.statusBayar');
 
         else
             return $this->create();
@@ -34,7 +33,10 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        return view('profil.profil');
+        $data = Profile::where('id_users', Auth::user()->id)->first();
+        $bayar = $data->jumlah_keluarga * 40000;
+
+        return view('bayar.bayar', compact('bayar'));
     }
 
     /**
@@ -46,25 +48,30 @@ class ProfilesController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'nama' => 'required',
-            'nomorkk' => ['required', 'max:16'],
-            'jumlah_keluarga' => 'required',
-            'alamat' => 'required',
+            'nama_akun' => 'required',
+            'nomor_hp' => ['required', 'max:13', 'min:10']
         ]);
 
-        $data = Profile::create([
-            'nama' => $request->nama,
-            'nomorkk' => $request->nomorkk,
-            'jumlah_keluarga' => $request->jumlah_keluarga,
-            'alamat' => $request->alamat,
-            'id_users' => Auth::user()->id,
+        $profil = Profile::where('id_users', Auth::user()->id)->first();
+        $transfer = $profil->jumlah_keluarga * 40000;
+
+        $data = Wallet::create([
+            'jenis'=> $request->tombol,
+            'nama_akun' => $request->nama_akun,
+            'nomor_hp' => $request->nomor_hp,
+            'id_profiles' => $profil->id,
+        ]);
+
+        $data = Profile::where('id_users', Auth::user()->id)->first()->update([
+            'zakat_bayar'=> $transfer,
+            'status_bayar' => true,
         ]);
 
         $user = User::where('id', Auth::user()->id)->first();
-        $user->tombol_profile ='1';
+        $user->tombol_bayar ='1';
         $user->save();
 
-        return view('profil.index', compact('data'));
+        return view('bayar.statusBayar');
     }
 
     /**

@@ -18,8 +18,6 @@ class Wallets extends Migration
             $table->string('jenis');
             $table->string('nama_akun');
             $table->string('nomor_hp')->unique();
-            $table->integer('zakat_transfer');
-            $table->integer('zakat_wallet');
             $table->integer('id_profiles');
             $table->timestamps();
         });
