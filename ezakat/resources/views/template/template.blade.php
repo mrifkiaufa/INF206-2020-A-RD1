@@ -196,7 +196,7 @@
             font-weight : bold;
             padding: 5px 80px;
             margin-top: 5px;
-            margin-right : 10px; 
+            margin-right : 10px;
             border: 1px solid #2F80ED;
         }
 
@@ -317,8 +317,12 @@
                 <hr style="color: white; block-size: 3px;">
                 <a class="nav-link" style="color: white; font-size: large;" href="{{ url('bayar') }}">Bayar</a>
                 <hr style="color: white; block-size: 3px;">
-                <a class="nav-link" style="color: white; font-size: large;" href="{{ url('dompet') }}">Dompet</a>
-                <hr style="color: white; block-size: 3px;">
+                @if (isset(Auth::user()->penerima))
+                    @if (Auth::user()->penerima > 0)
+                    <a class="nav-link" style="color: white; font-size: large;" href="{{ url('dompet') }}">Dompet</a>
+                    <hr style="color: white; block-size: 3px;">
+                    @endif
+                @endif
                 <a class="nav-link" style="color: white; font-size: large;" href="{{ route('logout') }}"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

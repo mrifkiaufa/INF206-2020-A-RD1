@@ -20,7 +20,7 @@ class BayarController extends Controller
     {
         $tombol = User::where('id', Auth::user()->id)->first();
 
-        if ($tombol->tombol_profil == '1') {
+        if ($tombol->tombol_profile == '1') {
             if($tombol->tombol_bayar == '1')
                 return view('bayar.statusBayar');
 
@@ -30,7 +30,7 @@ class BayarController extends Controller
 
         else {
             Alert::warning('Akses ditolak!', 'Mohon lengkapi profil terlebih dahulu');
-            return view('profil.profil');
+            return redirect('/profil');
         }
     }
 
