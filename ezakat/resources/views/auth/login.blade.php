@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="form-group row mt-3">
+            {{-- <div class="form-group row mt-3">
                 <div class="">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -45,7 +45,7 @@
                         </label>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="form-group row mb-0">
                 <p class="formulir mt-5">Belum memiliki akun? <a href="{{ url('register') }}"><b>Daftar</b></a></p>
