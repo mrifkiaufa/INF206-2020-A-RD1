@@ -279,7 +279,7 @@
         /* input{
             outline: none;
             background: #fbfbfb;
-            
+
             border-radius: 10px;
             font-size: 16px;
             display: block;
@@ -298,7 +298,7 @@
             border: 1px solid #2F80ED;
             height: 35px;
             width: 350px;
-            
+
         }
 
         .labelan {
@@ -307,7 +307,7 @@
             color: #2F80ED;
             margin-top : 15px;
         }
-        
+
     </style>
 </head>
 <body>
