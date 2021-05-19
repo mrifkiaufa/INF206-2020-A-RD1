@@ -100,8 +100,10 @@
             border-radius: 25px;
             border: 4px solid rgba(42, 161, 211, 1);
             background-color: white;
+            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
             padding: 20px;
             width: 500px;
+            margin: 2rem 8rem ;
         }
 
         .navbar-toggler-buatansendiri{
@@ -130,7 +132,7 @@
         .button2 {
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
-            background-color: rgba(86, 204, 242, 1);
+            background: -webkit-linear-gradient(right, #56CCF2, #1572E5);
             border: none;
             color: white;
             padding: 8px 30px;
@@ -145,8 +147,8 @@
             background: #fbfbfb;
             border-radius: 20px;
             box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-            height: 570px;
-            margin: 2rem 17rem ;
+            height: 500px;
+            margin: 2rem 10rem ;
             width: 450px;
             border: 1px solid #2F80ED;
         }
@@ -166,7 +168,7 @@
             background: #F3CFCF;
             border-radius: 10px;
             box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-            height: 300px;
+            height: 350px;
             margin: 2rem 4rem ;
             width: 600px;
             border: 1px solid #2F80ED;
@@ -205,13 +207,12 @@
         }
 
         #card-content {
-            padding: 12px 44px;
+            padding: 12px 40px;
         }
 
         #card-title {
             font-family: "Nunito", sans-serif;
             letter-spacing: 0px;
-            padding-bottom: 5px;
             padding-top: 8px;
             text-align: left;
             color: #2F80ED;
@@ -226,7 +227,7 @@
             font-family: "Roboto", sans-serif;
             height: 42.3px;
             margin: 13rem;
-            margin-top: 6px;
+            margin-top: 30px;
             width: 153px;
         }
 
@@ -263,30 +264,50 @@
             font-weight : 800;
         }
 
-        a {
+        /* a {
             text-decoration: none;
-        }
+        } */
 
-        label {
+        /* label {
             font-family: "Nunito", sans-serif;
             font-size: 13pt;
             color: #2F80ED;
-        }
+            padding: 8px 5px;
+            margin-top: 10px;
+        } */
 
-        input{
+        /* input{
+            outline: none;
+            background: #fbfbfb;
+            
+            border-radius: 10px;
+            font-size: 16px;
+            display: block;
+            border: 1px solid #2F80ED;
+            display : block;
+            margin-bottom: 20px;
+            height: 35px;
+            width: 350px;
+        } */
+        .inputan {
             outline: none;
             background: #fbfbfb;
             padding: 6px 8px;
             border-radius: 10px;
             font-size: 16px;
-            display: block;
             border: 1px solid #2F80ED;
-            margin-top: 5px;
-            margin-bottom: 10px;
             height: 35px;
             width: 350px;
+            
         }
 
+        .labelan {
+            font-family: "Nunito", sans-serif;
+            font-size: 13pt;
+            color: #2F80ED;
+            margin-top : 15px;
+        }
+        
     </style>
 </head>
 <body>
