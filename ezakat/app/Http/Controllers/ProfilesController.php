@@ -17,10 +17,10 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        $tombol = User::where('id', Auth::user()->id)->first()->tombol_profile;
-        $data = Profile::where('id_users', $tombol)->first();
+        $tombol = User::where('id', Auth::user()->id)->first();
+        $data = Profile::where('id_users', $tombol->id)->first();
 
-        if($tombol == '1')
+        if($tombol->tombol_profile == '1')
             return view('profil.index', compact('data'));
 
         else
