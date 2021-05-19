@@ -147,7 +147,7 @@
             background: #fbfbfb;
             border-radius: 20px;
             box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-            height: 500px;
+            height: 550px;
             margin: 2rem 10rem ;
             width: 450px;
             border: 1px solid #2F80ED;
@@ -227,7 +227,7 @@
             font-family: "Roboto", sans-serif;
             height: 42.3px;
             margin: 13rem;
-            margin-top: 30px;
+            margin-top: 15px;
             width: 153px;
         }
 
