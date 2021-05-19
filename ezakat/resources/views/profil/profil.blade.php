@@ -22,7 +22,8 @@
 
             <label class='labelan' for='alamat'>Alamat</label><br>
             <input class='inputan' id='alamat' name='alamat' type="text" value="{{ old('alamat') }}" required autofocus><br>
-          
+            
+            <p style="color: red; font-weight: 500;" > <br/>*Perhatikan baik-baik saat mengisi data.  Data yang sudah disimpan tidak dapat diubah lagi </p>
             <button id="submit-btn" type="submit" name="submit" value="Simpan" />Simpan</button>
 
         </form>

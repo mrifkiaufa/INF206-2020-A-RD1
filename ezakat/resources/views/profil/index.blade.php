@@ -4,9 +4,6 @@
 @section('isi')
 
 <div class="ms-4 mt-4">
-    <div class="">
-        <h4 style="color: red">*Data yang sudah disimpan tidak bisa diedit lagi</h4>
-    </div>
     <div class="card" style="width: 30rem;">
         <div class="card-header" style="background-image: linear-gradient(180deg, #2A9FD4 0%, #2E84EA 100%);">
             <h1 class="artikel" style="color: white">Profil</h1>
