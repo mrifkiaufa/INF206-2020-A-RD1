@@ -2,8 +2,8 @@
 @section('title','Daftar')
 
 @section('isi')
-    <div class="mt-5 ms-4" id="bor">
-        <h1 class="formulir mb-4">Daftar</h1>
+    <div  id="bor">
+        <h1 class="formulir mb-3">Daftar</h1>
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
