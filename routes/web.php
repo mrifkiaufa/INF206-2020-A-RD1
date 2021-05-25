@@ -43,3 +43,7 @@ Route::post('/profil', 'ProfilesController@store')->middleware('auth');
 Route::get('/pemberi', function () {
     return view('admin.pemberi');
 });
+
+Route::get('/penerima', function () {
+    return view('admin.penerima');
+});
