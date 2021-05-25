@@ -40,4 +40,6 @@ Route::get('/profil', 'ProfilesController@index')->middleware('auth');
 Route::post('/bayar', 'BayarController@store')->middleware('auth');
 Route::post('/profil', 'ProfilesController@store')->middleware('auth');
 
-
+Route::get('/pemberi', function () {
+    return view('admin.pemberi');
+});
