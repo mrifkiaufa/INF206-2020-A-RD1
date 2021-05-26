@@ -47,3 +47,7 @@ Route::get('/pemberi', function () {
 Route::get('/penerima', function () {
     return view('admin.penerima');
 });
+
+Route::get('/kelola', function () {
+    return view('admin.kelola');
+});
