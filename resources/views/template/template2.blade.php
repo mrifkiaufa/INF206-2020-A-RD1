@@ -18,7 +18,7 @@
                 <div class="navbar-nav nav-item navbar-collapse collapse">
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" aria-current="page" href="#">Kelola</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="{{ url('pemberi') }}">Pemberi</a>
-                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="#">Penerima</a>
+                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="{{ url('penerima') }}">Penerima</a>
                 </div>
             </div>
                 <input type="image" src="/img/logout.png" alt="#" class="tombol-logout shadow" type="button" href="{{ route('logout') }}"
