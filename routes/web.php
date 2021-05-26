@@ -50,6 +50,10 @@ Route::group(['middleware' => ['auth', 'role:admin']], function(){
     Route::resource('/pemberi', 'PemberiController');
     Route::get('/pemberi/{pemberi}/verif', 'PemberiController@verif');
     Route::get('/pemberi/{pemberi}/tolak', 'PemberiController@tolak');
+  
+    Route::get('/penerima', function () {
+    return view('admin.penerima');
+    });
 });
 
 
