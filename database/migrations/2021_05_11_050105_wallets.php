@@ -16,8 +16,8 @@ class Wallets extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->string('jenis');
-            $table->string('nama_akun');
-            $table->string('nomor_hp')->unique();
+            $table->string('nama_akun')->default('none');
+            $table->string('nomor_hp')->default('0');
             $table->integer('id_profiles');
             $table->timestamps();
         });
