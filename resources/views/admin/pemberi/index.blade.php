@@ -6,10 +6,12 @@
 <div class="container" style="margin-left: 90px;">
     <h2 class="pt-4" style="font-weight: bold;  margin-bottom : 40px;">Daftar Pemberi Zakat Fitrah Desa Ie Masen</h2>
 
-    <div class="boxsrc" style= "margin-bottom : 20px">
-        <input type="text" class= "inputsrc" placeholder=" Cari..." >
-        <button class ="src" ><input type="image" src="/img/search.png" style="background: white;" width="23px" height="23px"></button>
-    </div>
+    <form method="GET" action="/pemberi">
+        <div class="boxsrc" style= "margin-bottom : 20px">
+            <input name="search" type="text" class= "inputsrc" placeholder=" Cari..." >
+            <button class ="src" ><input type="image" src="/img/search.png" style="background: white;" width="23px" height="23px"></button>
+        </div>
+    </form>
 
     <table class="table" border="1" >
         <tr bgcolor= "18BAFF" font-weight="bold">
@@ -38,13 +40,6 @@
             </tr>
             @endif
         @endforeach
-
-        {{-- <tr>
-            <td><button input type="button" class="btn shadow" id="button-adm" data-bs-toggle="modal" data-bs-target="#modalDetail">Detail</button></td>
-            <td>Fernando</td>
-            <td>1354102645709123</td>
-            <td> <input id="box-status" value="Sudah Bayar"></td>
-        </tr> --}}
     </table>
 </div>
 @endsection
