@@ -25,29 +25,37 @@ Route::get('/test', function () {
     return view('test.test');
 });
 
-
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth', 'role:user']], function(){
+    Route::get('/dompet', 'WalletsController@index');
 
-Route::get('/dompet', 'WalletsController@index')->middleware('auth');
+    Route::get('/bayar', 'BayarController@index');
+    Route::get('/profil', 'ProfilesController@index');
 
-Route ::get('/bayar', 'BayarController@index')->middleware('auth');
-Route::get('/profil', 'ProfilesController@index')->middleware('auth');
-
-Route::post('/bayar', 'BayarController@store')->middleware('auth');
-Route::post('/profil', 'ProfilesController@store')->middleware('auth');
-
-Route::get('/pemberi', function () {
-    return view('admin.pemberi');
+    Route::post('/bayar', 'BayarController@store');
+    Route::post('/profil', 'ProfilesController@store');
 });
 
-Route::get('/penerima', function () {
+Route::group(['middleware' => ['auth', 'role:admin']], function(){
+
+    Route::get('/homeAdmin', function () {
+
+        return view('admin.home')->name('home');
+    });
+
+    Route::resource('/pemberi', 'PemberiController');
+    Route::get('/pemberi/{pemberi}/verif', 'PemberiController@verif');
+    Route::get('/pemberi/{pemberi}/tolak', 'PemberiController@tolak');
+  
+    Route::get('/penerima', function () {
     return view('admin.penerima');
-});
-
-Route::get('/kelola', function () {
+    });
+  
+    Route::get('/kelola', function () {
     return view('admin.kelola');
+    });
 });

@@ -21,9 +21,10 @@ class BayarController extends Controller
         $tombol = User::where('id', Auth::user()->id)->first();
 
         if ($tombol->tombol_profile == '1') {
-            if($tombol->tombol_bayar == '1')
-                return view('bayar.statusBayar');
-
+            if($tombol->tombol_bayar == '1'){
+                $data = Profile::where('id_users', Auth::user()->id)->first();
+                return view('bayar.statusBayar', compact('data'));
+            }
             else
                 return $this->create();
         }
@@ -44,6 +45,10 @@ class BayarController extends Controller
         $data = Profile::where('id_users', Auth::user()->id)->first();
         $bayar = $data->jumlah_keluarga * 40000;
 
+        Profile::where('id_users', Auth::user()->id)->first()->update([
+            'zakat_bayar'=> $bayar
+        ]);
+
         return view('bayar.bayar', compact('bayar'));
     }
 
@@ -61,18 +66,12 @@ class BayarController extends Controller
         ]);
 
         $profil = Profile::where('id_users', Auth::user()->id)->first();
-        $transfer = $profil->jumlah_keluarga * 40000;
 
-        $data = Wallet::create([
+        Wallet::create([
             'jenis'=> $request->tombol,
             'nama_akun' => $request->nama_akun,
             'nomor_hp' => $request->nomor_hp,
             'id_profiles' => $profil->id,
-        ]);
-
-        $data = Profile::where('id_users', Auth::user()->id)->first()->update([
-            'zakat_bayar'=> $transfer,
-            'status_bayar' => true,
         ]);
 
         $user = User::where('id', Auth::user()->id)->first();
