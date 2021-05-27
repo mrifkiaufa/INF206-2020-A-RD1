@@ -69,16 +69,19 @@ class BayarController extends Controller
 
         Wallet::create([
             'jenis'=> $request->tombol,
+            'id_profiles' => $profil->id,
+        ]);
+
+        Wallet::where('id_profiles', $profil->id)->update([
             'nama_akun' => $request->nama_akun,
             'nomor_hp' => $request->nomor_hp,
-            'id_profiles' => $profil->id,
         ]);
 
         $user = User::where('id', Auth::user()->id)->first();
         $user->tombol_bayar ='1';
         $user->save();
 
-        return view('bayar.statusBayar');
+        return $this->index();
     }
 
     /**
