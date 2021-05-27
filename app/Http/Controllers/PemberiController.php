@@ -15,11 +15,16 @@ class PemberiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $dataProfil = Profile::all();
-        $dataUser =  User::all();
+        if($request->has('search')){
+            $dataProfil = Profile::where('nama','LIKE','%'.$request->search.'%')->get();
+        }
+        else{
+            $dataProfil = Profile::all();
+        }
 
+        $dataUser =  User::all();
         return view('admin.pemberi.index', compact('dataProfil', 'dataUser'));
     }
 
