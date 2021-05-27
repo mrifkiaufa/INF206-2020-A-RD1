@@ -14,9 +14,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark grad">
             <div class="container-fluid">
-                <a class="navbar-brand judul" href="#">e-Zakat</a>
+                <a class="navbar-brand judul" href="{{ url('admin') }}">e-Zakat</a>
                 <div class="navbar-nav nav-item navbar-collapse collapse">
-                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" aria-current="page" href="#">Kelola</a>
+                    <a class="nav-link navbar-nav nav-item" style="font-size: larger;" aria-current="page" href="{{ url('kelola') }}">Kelola</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="{{ url('pemberi') }}">Pemberi</a>
                     <a class="nav-link navbar-nav nav-item" style="font-size: larger;" href="{{ url('penerima') }}">Penerima</a>
                 </div>

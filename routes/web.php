@@ -42,20 +42,19 @@ Route::group(['middleware' => ['auth', 'role:user']], function(){
 
 Route::group(['middleware' => ['auth', 'role:admin']], function(){
 
-    Route::get('/homeAdmin', function () {
-
-        return view('admin.home')->name('home');
-    });
+    Route::get('/admin', function () {
+        return view('admin.home');
+    })->name('home');
 
     Route::resource('/pemberi', 'PemberiController');
     Route::get('/pemberi/{pemberi}/verif', 'PemberiController@verif');
     Route::get('/pemberi/{pemberi}/tolak', 'PemberiController@tolak');
-  
+
     Route::get('/penerima', function () {
-    return view('admin.penerima');
+    return view('admin.penerima.penerima');
     });
-  
+
     Route::get('/kelola', function () {
-    return view('admin.kelola');
+    return view('admin.kelola.kelola');
     });
 });
