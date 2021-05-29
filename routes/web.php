@@ -13,20 +13,15 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/about', function () {
-    return view('about.about');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/contact', function () {
-    return view('contact.contact');
-});
+Route::get('/about', 'AboutController@index');
+
+Route::get('/contact', 'ContactController@index');
 
 Route::get('/test', function () {
     return view('test.test');
 });
-
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -41,10 +36,6 @@ Route::group(['middleware' => ['auth', 'role:user']], function(){
 });
 
 Route::group(['middleware' => ['auth', 'role:admin']], function(){
-
-    Route::get('/admin', function () {
-        return view('admin.home');
-    })->name('home');
 
     Route::resource('/pemberi', 'PemberiController');
     Route::get('/pemberi/{pemberi}/verif', 'PemberiController@verif');
