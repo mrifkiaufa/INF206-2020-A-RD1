@@ -28,7 +28,11 @@
                     </tbody>
                 </table>
 
-                <div id="box-dompet" >Status Pengiriman : Sudah Terkirim </div>
+                @if ($data->status_terima == 1)
+                    <div id="box-dompet-success" >Status Pengiriman : Sudah Terkirim </div>
+                @else
+                    <div id="box-dompet-pending" >Status Pengiriman : Pending </div>
+                @endif
                 <p class="pt-4" style="color: red; font-weight: bold;">*Zakat akan kami transfer sesuai dengan akun ovo/gopay yang sudah kamu isi sebelumnya.</p>
             </div>
         </div>
