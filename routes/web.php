@@ -58,7 +58,5 @@ Route::group(['middleware' => ['auth', 'role:admin']], function(){
     Route::get('/penerima/{penerima}/verif', 'PenerimaController@verif');
     Route::get('/penerima/{penerima}/tolak', 'PenerimaController@tolak');
 
-    Route::get('/kelola', function () {
-    return view('admin.kelola.kelola');
-    });
+    Route::get('/kelola', 'KelolaController@index');
 });
