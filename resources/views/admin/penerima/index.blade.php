@@ -5,7 +5,7 @@
 
 <div class="container" style="margin-left: 90px;">
     <h2 class="pt-4" style="font-weight: bold;  margin-bottom : 40px;">Daftar Penerima Zakat Fitrah Desa Ie Masen</h2>
-    
+
     <!-- <form class="boxsrc" action="/penerima" method="get"> -->
     <form class="boxsrc" action="/penerima" method="get">
         <input type="text" class= "inputsrc" name="search" placeholder=" Cari..." >
@@ -18,7 +18,8 @@
         </tr>
 
         @foreach ($dataProfil as $profil)
-        @if ($dataUser->where('id', $profil->id_users)->first()->jenis == 'user')
+        @if ($dataUser->where('id', $profil->id_users)->first()->jenis == 'user' &&
+            $dataUser->where('id', $profil->id_users)->first()->penerima == 1)
         <tr>
             <td><a href="penerima/{{ $profil->id_users }}/edit" type="button" class="btn button-detail shadow">Detail</a></td>
             <td>{{$profil->nama}}</td>
@@ -41,8 +42,8 @@
         </tr>
         @endif
     @endforeach
-    </table>   
+    </table>
 
-    <button class="btn btn-success">Munculkan halaman dompet</button> 
+    <button class="btn btn-success">Munculkan halaman dompet</button>
 </div>
 @endsection
