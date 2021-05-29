@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Wallet;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PemberiController extends Controller
 {
@@ -120,7 +121,7 @@ class PemberiController extends Controller
             'status_bayar'=> 1
         ]);
 
-        return redirect('/pemberi');
+        return redirect('/pemberi')->with('success', 'Pembayaran berhasil diverifikasi!');
     }
 
     public function tolak($id)
@@ -129,7 +130,7 @@ class PemberiController extends Controller
             'tombol_bayar'=> 0
         ]);
 
-        return redirect('/pemberi');
+        return redirect('/pemberi')->with('success', 'Pembayaran berhasil ditolak!');
     }
 
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Wallet;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PenerimaController extends Controller
 {
@@ -117,19 +118,19 @@ class PenerimaController extends Controller
     public function verif($id)
     {
         Profile::where('id_users', $id)->update([
-            'status_bayar'=> 1
+            'status_terima'=> 1
         ]);
 
-        return redirect('/penerima');
+        return redirect('/penerima')->with('success', 'Penyaluran zakat diverifikasi!');
     }
 
-    public function tolak($id)
+    public function aktif()
     {
-        User::where('id', $id)->update([
-            'tombol_bayar'=> 0
+        User::where('jenis', 'user')->where('penerima', 1)->update([
+            'tombol_dompet' => 1
         ]);
 
+        Alert::success('Fitur dompet dibuka!', 'Sekarang kamu dapat menkonfirmasi penyaluran zakat.');
         return redirect('/penerima');
     }
-
 }

@@ -26,14 +26,19 @@ class WalletsController extends Controller
             if ($tombol->tombol_profile == '1') {
                 if($tombol->tombol_dompet == '1') {
                     $data = Profile::where('id_users', Auth::user()->id)->first();
+
                     $zakatTerima = self::zakatTerima();
+
+                    $data->update([
+                        'zakat_terima' => $zakatTerima
+                    ]);
 
                     return view('dompet.dompet', compact('data', 'zakatTerima'));
                 }
 
                 else {
                     Alert::warning('Fitur ini belum dibuka!', 'Admin akan membukanya saat semua zakat sudah terkumpul');
-                    return redirect('/home');
+                    return redirect('/');
                 }
             }
 
