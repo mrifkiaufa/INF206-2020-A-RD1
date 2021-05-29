@@ -41,13 +41,9 @@ Route::group(['middleware' => ['auth', 'role:admin']], function(){
     Route::get('/pemberi/{pemberi}/verif', 'PemberiController@verif');
     Route::get('/pemberi/{pemberi}/tolak', 'PemberiController@tolak');
 
-    // Route::get('/penerima', function () {
-    // return view('admin.penerima.index');
-    // });
-
     Route::resource('/penerima', 'PenerimaController');
     Route::get('/penerima/{penerima}/verif', 'PenerimaController@verif');
-    Route::get('/penerima/{penerima}/tolak', 'PenerimaController@tolak');
+    Route::get('/penerima/{penerima}/aktif', 'PenerimaController@aktif');
 
     Route::get('/kelola', 'KelolaController@index');
 });
