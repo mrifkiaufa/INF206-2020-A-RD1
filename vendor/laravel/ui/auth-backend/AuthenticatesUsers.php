@@ -36,11 +36,7 @@ trait AuthenticatesUsers
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            if($request->user()->jenis == 'admin'){
-                return view('admin.home');
-            }
-
-            return redirect('home');
+            return redirect('/');
         }
 
         return back()->withErrors([
