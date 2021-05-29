@@ -15,7 +15,7 @@
 
     <table class="table" border="1" >
         <tr bgcolor= "18BAFF" font-weight="bold">
-            <th></th><th>Nama</th><th>Nomor KK</th> <th>Status</th>
+            <th></th><th>Nama</th><th>Nomor HP</th> <th>Status</th>
         </tr>
 
         @foreach ($dataProfil as $profil)
@@ -23,7 +23,7 @@
             <tr>
                 <td><a href="pemberi/{{ $profil->id_users }}/edit" type="button" class="btn button-detail shadow">Detail</a></td>
                 <td>{{$profil->nama}}</td>
-                <td>{{$profil->nomorkk}}</td>
+                <td>{{$dataWallet->where('id_profiles', $profil->id)->first()->nomor_hp}}</td>
                 @if ($dataUser->where('id', $profil->id_users)->first()->tombol_bayar == 1)
                     @if ($profil->status_bayar == 1)
                         <td><p class="sudah-bayar">Dikonfirmasi</p></td>
