@@ -23,7 +23,7 @@
                         <tr>
                             <td> <h5 class="card-tittle p-3">Saldo </h5> </td>
                             <td> <h5 class="card-tittle p-3">:</h5> </td>
-                            <td><h5 class="card-tittle p-3"> Rp 1.500.000 </h5></td>
+                            <td><h5 class="card-tittle p-3"> Rp {{number_format($zakatTerima,2,',','.')}} </h5></td>
                         </tr>
                     </tbody>
                 </table>

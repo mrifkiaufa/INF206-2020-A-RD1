@@ -21,7 +21,7 @@ class KelolaController extends Controller
         $users = User::where('jenis','user');
         $jumlahPemberi = $users->count();
         $jumlahPenerima = $users->where('penerima', 1)->count();
-        $jumlahZakat = $this->jumlahZakat();
+        $jumlahZakat = self::jumlahZakat();
         $rataZakat = $jumlahZakat / $jumlahPenerima;
 
         $data = [
@@ -34,7 +34,7 @@ class KelolaController extends Controller
         return view('admin.kelola.kelola', compact('data'));
     }
 
-    public function jumlahZakat(){
+    public static function jumlahZakat(){
         $jumlah = 0;
 
         $data = Profile::all();

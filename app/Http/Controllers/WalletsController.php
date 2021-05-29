@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\KelolaController;
 
 class WalletsController extends Controller
 {
@@ -18,13 +19,15 @@ class WalletsController extends Controller
      */
     public function index()
     {
+
         if(Auth::user()->penerima > 0) {
             $tombol = User::where('id', Auth::user()->id)->first();
 
             if ($tombol->tombol_profile == '1') {
                 $data = Profile::where('id_users', Auth::user()->id)->first();
+                $zakatTerima = $this->zakatTerima();
 
-                return view('dompet.dompet', compact('data'));
+                return view('dompet.dompet', compact('data', 'zakatTerima'));
             }
 
             else {
@@ -36,6 +39,24 @@ class WalletsController extends Controller
         else {
             return redirect('/home');
         }
+    }
+
+    public function zakatTerima(){
+        $jumlahZakat = KelolaController::jumlahZakat();
+        $totalPenerima = 0;
+
+        $users = User::where('jenis','user')->where('penerima', 1)->get();
+
+        foreach ($users as $user) {
+            global $totalPenerima;
+            $totalPenerima += Profile::where('id_users', $user->id)->first()->jumlah_keluarga;
+        }
+
+        $jumlahKeluarga = Profile::where('id_users', Auth::user()->id)->first()->jumlah_keluarga;
+
+        $jumlahZakat = $jumlahZakat * $jumlahKeluarga / $totalPenerima;
+
+        return $jumlahZakat;
     }
 
     /**
