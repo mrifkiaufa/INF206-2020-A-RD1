@@ -25,7 +25,8 @@ class PenerimaController extends Controller
         }
 
         $dataUser =  User::all();
-        return view('admin.penerima.index', compact('dataProfil', 'dataUser'));
+        $dataWallet = Wallet::all();
+        return view('admin.penerima.index', compact('dataProfil', 'dataUser', 'dataWallet'));
     }
 
     /**
