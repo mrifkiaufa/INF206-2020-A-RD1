@@ -9,6 +9,16 @@ use App\Models\User;
 class HomeController extends Controller
 {
     public function index() {
-        return view('home.index');
+        if(Auth::check()){
+            if(Auth::user()->jenis == 'admin'){
+                return view('admin.home');
+            }
+            else{
+                return view('home.index');
+            }
+        }
+        else{
+            return view('home.index');
+        }
     }
 }
