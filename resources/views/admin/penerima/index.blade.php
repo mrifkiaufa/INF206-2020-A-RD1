@@ -24,26 +24,22 @@
             <td><a href="penerima/{{ $profil->id_users }}/edit" type="button" class="btn button-detail shadow">Detail</a></td>
             <td>{{$profil->nama}}</td>
             <td>{{$dataWallet->where('id_profiles', $profil->id)->first()->nomor_hp}}</td>
-            @if ($dataUser->where('id', $profil->id_users)->first()->tombol_bayar == 1)
-                @if ($profil->status_bayar == 1)
+            @if ($dataUser->where('id', $profil->id_users)->first()->tombol_dompet == 1)
+                @if ($profil->status_terima == 1)
                     <td><p class="sudah-bayar">Dikonfirmasi</p></td>
                 @else
                     <td>
-                        <a href="penerima/{{ $profil->id_users }}/tolak" type="button" class="btn shadow button-tolak">Tolak</a>
                         <a href="penerima/{{ $profil->id_users }}/verif" type="button" class="btn shadow button-verifikasi">Verifikasi</a>
                     </td>
                 @endif
             @else
-                <td>
-                    <p class="btn btn-warning">Pending</p>
-                    <p class="btn btn-success">Berhasil</p>
-                </td>
+                <td><p class="none">-</p></td>
             @endif
         </tr>
         @endif
     @endforeach
     </table>
 
-    <button class="btn btn-success">Munculkan halaman dompet</button>
+    <a href="/penerima/{{ $profil->id_users }}/aktif" type="submit" class="btn btn-success">Buka fitur dompet</a>
 </div>
 @endsection
