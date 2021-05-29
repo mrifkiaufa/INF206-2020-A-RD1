@@ -25,7 +25,7 @@ class WalletsController extends Controller
 
             if ($tombol->tombol_profile == '1') {
                 $data = Profile::where('id_users', Auth::user()->id)->first();
-                $zakatTerima = $this->zakatTerima();
+                $zakatTerima = self::zakatTerima();
 
                 return view('dompet.dompet', compact('data', 'zakatTerima'));
             }
@@ -41,7 +41,7 @@ class WalletsController extends Controller
         }
     }
 
-    public function zakatTerima(){
+    public static function zakatTerima(){
         $jumlahZakat = KelolaController::jumlahZakat();
         $totalPenerima = 0;
 
