@@ -25,7 +25,8 @@ class PemberiController extends Controller
         }
 
         $dataUser =  User::all();
-        return view('admin.pemberi.index', compact('dataProfil', 'dataUser'));
+        $dataWallet = Wallet::all();
+        return view('admin.pemberi.index', compact('dataProfil', 'dataUser', 'dataWallet'));
     }
 
     /**
