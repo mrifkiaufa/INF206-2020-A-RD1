@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Wallet;
+use App\Http\Controllers\KelolaController;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PenerimaController extends Controller
@@ -126,11 +127,37 @@ class PenerimaController extends Controller
 
     public function aktif()
     {
-        User::where('jenis', 'user')->where('penerima', 1)->update([
-            'tombol_dompet' => 1
-        ]);
+        if(User::where('penerima', 1)->count() == Profile::where('status_bayar', 1)->count()){
+            User::where('jenis', 'user')->where('penerima', 1)->update([
+                'tombol_dompet' => 1
+            ]);
 
-        Alert::success('Fitur dompet dibuka!', 'Sekarang kamu dapat menkonfirmasi penyaluran zakat.');
+            $data = User::where('tombol_dompet', 1)->get();
+
+            foreach($data as $profil) {
+                Profile::where('id_users',$profil->id)->update([
+                    'zakat_terima' => KelolaController::jumlahZakat() * Profile::where('id_users',$profil->id)->first()->jumlah_keluarga / self::jumlahPenerima()
+                ]);
+            }
+
+            Alert::success('Fitur dompet dibuka!', 'Sekarang kamu dapat menkonfirmasi penyaluran zakat.');
+        }
+        else{
+            Alert::error('Akses ditolak!', 'Verifikasi dulu semua pembayaran.');
+        }
         return redirect('/penerima');
+    }
+
+    public static function jumlahPenerima(){
+        $totalPenerima = 0;
+
+        $users = User::where('jenis','user')->where('penerima', 1)->get();
+
+        foreach ($users as $user) {
+            global $totalPenerima;
+            $totalPenerima += Profile::where('id_users', $user->id)->first()->jumlah_keluarga;
+        }
+
+        return $totalPenerima;
     }
 }

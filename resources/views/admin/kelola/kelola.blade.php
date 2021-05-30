@@ -7,9 +7,20 @@
 
     <div class="bgKelola">
         <p class="kelolaText"><br> Jumlah pemberi zakat adalah &ensp;: {{ $data['jumlahPemberi'] }}</p>
+
+        @if (is_numeric($data['jumlahZakat']))
         <p class="kelolaText"> Jumlah zakat yang terkumpul &ensp;: Rp. {{ number_format($data['jumlahZakat'],2,',','.') }}</p>
+        @else
+        <p class="kelolaText"> Rata-Rata Zakat Tiap Penerima : Rp {{ $data['jumlahZakat'] }}</p>
+        @endif
+
         <p class="kelolaText"> Jumlah Penerima zakat &emsp;&emsp;&emsp;&ensp;: {{ $data['jumlahPenerima'] }}</p>
-        <p class="kelolaText"> Rata-Rata Zakat Tiap Penerima : Rp {{ number_format($data['rataZakat'],2,',','.') }}</p>
+
+        @if (is_numeric($data['rataZakat']))
+            <p class="kelolaText"> Rata-Rata Zakat Tiap Penerima : Rp {{ number_format($data['rataZakat'],2,',','.') }}</p>
+        @else
+        <p class="kelolaText"> Rata-Rata Zakat Tiap Penerima : Rp {{ $data['rataZakat'] }}</p>
+        @endif
     </div>
 
 </div>

@@ -45,10 +45,6 @@ class BayarController extends Controller
         $data = Profile::where('id_users', Auth::user()->id)->first();
         $bayar = $data->jumlah_keluarga * 40000;
 
-        Profile::where('id_users', Auth::user()->id)->first()->update([
-            'zakat_bayar'=> $bayar
-        ]);
-
         return view('bayar.bayar', compact('bayar'));
     }
 
@@ -75,6 +71,10 @@ class BayarController extends Controller
         Wallet::where('id_profiles', $profil->id)->update([
             'nama_akun' => $request->nama_akun,
             'nomor_hp' => $request->nomor_hp,
+        ]);
+
+        $profil->update([
+            'zakat_bayar'=> $profil->jumlah_keluarga * 40000
         ]);
 
         $user = User::where('id', Auth::user()->id)->first();
