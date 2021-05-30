@@ -27,11 +27,7 @@ class WalletsController extends Controller
                 if($tombol->tombol_dompet == '1') {
                     $data = Profile::where('id_users', Auth::user()->id)->first();
 
-                    $zakatTerima = self::zakatTerima();
-
-                    $data->update([
-                        'zakat_terima' => $zakatTerima
-                    ]);
+                    $zakatTerima = $data->zakat_terima;
 
                     return view('dompet.dompet', compact('data', 'zakatTerima'));
                 }
@@ -51,24 +47,6 @@ class WalletsController extends Controller
         else {
             return redirect('/home');
         }
-    }
-
-    public static function zakatTerima(){
-        $jumlahZakat = KelolaController::jumlahZakat();
-        $totalPenerima = 0;
-
-        $users = User::where('jenis','user')->where('penerima', 1)->get();
-
-        foreach ($users as $user) {
-            global $totalPenerima;
-            $totalPenerima += Profile::where('id_users', $user->id)->first()->jumlah_keluarga;
-        }
-
-        $jumlahKeluarga = Profile::where('id_users', Auth::user()->id)->first()->jumlah_keluarga;
-
-        $jumlahZakat = $jumlahZakat * $jumlahKeluarga / $totalPenerima;
-
-        return $jumlahZakat;
     }
 
     /**

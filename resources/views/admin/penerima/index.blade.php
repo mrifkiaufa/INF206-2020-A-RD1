@@ -14,32 +14,48 @@
 
     <table class="table mt-3" border="1" >
         <tr bgcolor= "18BAFF" font-weight="bold">
-            <th></th><th>Nama</th><th>Nomor HP</th> <th>Status</th>
+            <th></th><th>Nama</th><th>Nomor HP</th> <th>Jenis Pembayaran</th> <th>Status</th>
         </tr>
+        @forelse ($dataProfil as $profil)
+            @if ($dataUser->where('id', $profil->id_users)->first()->jenis == 'user' &&
+                $dataUser->where('id', $profil->id_users)->first()->penerima == 1)
+            <tr>
+                <td><a href="penerima/{{ $profil->id_users }}/edit" type="button" class="btn button-detail shadow">Detail</a></td>
+                <td>{{$profil->nama}}</td>
 
-        @foreach ($dataProfil as $profil)
-        @if ($dataUser->where('id', $profil->id_users)->first()->jenis == 'user' &&
-            $dataUser->where('id', $profil->id_users)->first()->penerima == 1)
-        <tr>
-            <td><a href="penerima/{{ $profil->id_users }}/edit" type="button" class="btn button-detail shadow">Detail</a></td>
-            <td>{{$profil->nama}}</td>
-            <td>{{$dataWallet->where('id_profiles', $profil->id)->first()->nomor_hp}}</td>
-            @if ($dataUser->where('id', $profil->id_users)->first()->tombol_dompet == 1)
-                @if ($profil->status_terima == 1)
-                    <td><p class="sudah-bayar">Dikonfirmasi</p></td>
+                @if (isset($dataWallet->where('id_profiles', $profil->id)->first()->nomor_hp))
+                    <td>{{$dataWallet->where('id_profiles', $profil->id)->first()->nomor_hp}}</td>
+                    <td>{{$dataWallet->where('id_profiles', $profil->id)->first()->jenis}}</td>
                 @else
-                    <td>
-                        <a href="penerima/{{ $profil->id_users }}/verif" type="button" class="btn shadow button-verifikasi">Verifikasi</a>
-                    </td>
+                    <td>-</td>
+                    <td>-</td>
                 @endif
-            @else
-                <td><p class="none">-</p></td>
+
+                @if ($dataUser->where('id', $profil->id_users)->first()->tombol_dompet == 1)
+                    @if ($profil->status_terima == 1)
+                        <td><p class="sudah-bayar">Dikonfirmasi</p></td>
+                    @else
+                        <td>
+                            <a href="penerima/{{ $profil->id_users }}/verif" type="button" class="btn shadow button-verifikasi">Verifikasi</a>
+                        </td>
+                    @endif
+                @else
+                    <td><p class="none">-</p></td>
+                @endif
+            </tr>
             @endif
-        </tr>
-        @endif
-    @endforeach
+        @empty
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        @endforelse
     </table>
 
+    @if (isset($profil))
     <a href="/penerima/{{ $profil->id_users }}/aktif" type="submit" class="btn btn-success">Buka fitur dompet</a>
+    @endif
 </div>
 @endsection
