@@ -48,7 +48,7 @@ class KelolaController extends Controller
     public static function jumlahZakat(){
         $jumlah = 0;
 
-        $data = Profile::all();
+        $data = Profile::where('status_bayar', 1)->get();
 
         foreach ($data as $pemberi) {
             global $jumlah;

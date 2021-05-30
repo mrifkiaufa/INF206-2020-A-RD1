@@ -16,7 +16,7 @@ class Profiles extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('nomorkk')->unique();
+            $table->string('nomorkk');
             $table->string('jumlah_keluarga');
             $table->string('alamat');
             $table->integer('zakat_bayar')->default(0);
