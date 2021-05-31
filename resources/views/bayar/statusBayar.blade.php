@@ -7,9 +7,13 @@
     </div>
     <div id="card-status">
         @if ($data->status_bayar == 1)
-            <div id="box-verif"> Pembayaran anda sudah diverifikasi.</div>
+            <img src="/img/check.png" width="90" height="90" style="margin-left: 15rem; margin-top : 2rem;" >
+            <div class ="fon mt-3"> Pembayaran anda sudah diverifikasi !</div>
+            <div id="box-verif"> Terima Kasih telah membayar zakat melalui website e-zakat</div>
         @else
-            <div id="box-pending"> Silahkan tunggu, admin sedang meninjau pembayaran anda.</div>
+            <div class="fon mt-4"> Menunggu Verifikasi Pembayaran...</div>
+            <img src="/img/tunggu.png" width="90" height="90" style="margin-left: 15rem; margin-top:2rem;" >
+            <div id="box-pending">Harap menunggu, admin sedang meninjau pembayaran anda</div>
         @endif
     </div>
 
