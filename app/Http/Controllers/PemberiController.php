@@ -107,9 +107,9 @@ class PemberiController extends Controller
      */
     public function destroy($id)
     {
+        $idProfil = Profile::where('id_users',$id)->first()->id;
         User::destroy($id);
         Profile::where('id_users',$id)->delete();
-        $idProfil = Profile::where('id_users',$id)->first()->id;
         Wallet::where('id_profiles',$idProfil)->delete();
 
         return redirect('/pemberi');
