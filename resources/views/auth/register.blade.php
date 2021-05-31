@@ -52,7 +52,7 @@
             <div class="form-group row">
                 <p class="formulir mb-1">Jenis akun</p>
                 <div>
-                    <input type="radio" id="opsi1" name="jenis_akun" value="opsi1">
+                    <input type="radio" id="opsi1" name="jenis_akun" value="opsi1" checked>
                     <label for="male"><p class="formulir" style="font-size: 17px; font-weight: lighter">Pemberi saja</p></label>
 
                     <input class="ms-4" type="radio" id="opsi2" name="jenis_akun" value="opsi2">
