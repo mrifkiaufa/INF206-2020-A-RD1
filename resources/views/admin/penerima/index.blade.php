@@ -54,23 +54,23 @@
         @endforelse
     </table>
 
-    <div id="box-salur" class= "mt-4">
-        
-        <p style="color:black; " >Tekan tombol berikut jika sekiranya semua pembayaran zakat sudah diverifikasi.<br/> Tombol ini berfungsi untuk mengkalkulasikan pembagian zakat kepada penerima zakat. </p>
+    @if (isset($profil))
+        <div id="box-salur" class= "mt-4">
 
-        <hr style="height :2px; color: black;">
-       
-        <div class="row">
-            <div class="col-md-1">
-                @if (isset($profil))
-                <a href="/penerima/{{ $profil->id_users }}/aktif" type="submit" class="btn btn-success" >Salurkan</a>
-                @endif
-            </div>
-            <div class="col">
-                <p style="color: black; font-weight: 600; margin-left:2rem; padding:6px;" >*Fitur dompet akan terbuka ketika tombol ditekan</p>
+            <p style="color:black; " >Tekan tombol berikut jika sekiranya semua pembayaran zakat sudah diverifikasi.<br/> Tombol ini berfungsi untuk mengkalkulasikan pembagian zakat kepada penerima zakat. </p>
+
+            <hr style="height :2px; color: black;">
+            <div class="row">
+                <div class="col-md-1">
+
+                    <a href="/penerima/{{ $profil->id_users }}/aktif" type="submit" class="btn btn-success" >Salurkan</a>
+
+                </div>
+                <div class="col">
+                    <p style="color: black; font-weight: 600; margin-left:2rem; padding:6px;" >*Fitur dompet akan terbuka ketika tombol ditekan</p>
+                </div>
             </div>
         </div>
-           
-    </div>
+    @endif
 </div>
 @endsection
