@@ -170,39 +170,39 @@ input {
 }
 
 #card-status {
-    background: #f3cfcf;
+    background: #e1e5ea;
     border-radius: 10px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
     height: 350px;
-    margin: 2rem 4rem;
+    margin: 3rem 4rem;
+    margin-left : 5rem;
     width: 600px;
-    border: 1px solid #2f80ed;
+    border: 1px solid #9ecca4;
     margin-top: 30px;
 }
 
 #box-verif {
-    width: 450px;
-    height: 50px;
-    background: #bdffb2;
-    border-radius: 5px;
-    font-size: 25px;
-    font-family: "Roboto", sans-serif;
+    width: 598px;
+    height: 153px;
+    background: #9ecca4;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "ovo", sans-serif;
     font-weight: bold;
-    margin: 2rem 4rem;
-    padding: 3px 15px;
-    margin-top: 120px;
+    padding: 50px 35px;
+    margin-top: 20px;
 }
+
 #box-pending {
-    width: 400px;
-    height: 100px;
-    background: #ebb565;
-    border-radius: 5px;
-    font-size: 25px;
-    font-family: "Roboto", sans-serif;
+    width: 598px;
+    height: 40px;
+    background: #ff8882;
+    /* border-radius: 1px; */
+    font-size: 18px;
+    font-family: "ovo", sans-serif;
     font-weight: bold;
-    margin: 2rem 4rem;
-    padding: 3px 15px;
-    margin-top: 120px;
+    padding: 5px 50px;
+    margin-top: 50px;
 }
 
 #box-dompet-success {
@@ -449,5 +449,13 @@ p.kelolaText {
     font-weight: bold;
     padding: 3px 15px;
     border: 2px solid #18baff;
-    
+}
+
+.fon {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    font-size: 25px;
+    font-weight : bold; 
+    text-align: center;
+
 }
