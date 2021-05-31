@@ -42,12 +42,10 @@
             <div class="modal-footer">
                 <a href="/pemberi" type="button" class="btn btn-secondary">Kembali</a>
                 <button type="submit" name="tombol" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formDataEdit">Edit</button>
-                <form action="/pemberi/{{ $dataProfil->id_user }}" method="post" class="d-inline">
+                <form action="/pemberi/{{ $dataProfil->id_users }}" method="post" class="d-inline">
                     @method('delete')
                     @csrf
-                    <button type="submit" class="btn bg-danger" style="text-decoration:none;">Hapus
-                    </button>
-                </td>
+                    <button type="submit" class="btn bg-danger">Hapus</button>
                 </form>
             </div>
         </div>
