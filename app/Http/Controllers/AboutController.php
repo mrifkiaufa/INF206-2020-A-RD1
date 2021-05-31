@@ -15,11 +15,11 @@ class AboutController extends Controller
                 return redirect('/');
             }
             else{
-                return view('contact.contact');
+                return view('about.about');
             }
         }
         else{
-            return view('contact.contact');
+            return view('about.about');
         }
     }
 }
