@@ -7,7 +7,7 @@ Muhammad Rifki Aufa (1908107010037)
 Muhammad Saifullah Sani (1908107010062)
 Jessika (1908107010074)
 
-Cara mengakses website:
+Tata cara mengakses website:
 1. Clone terlebih dahulu repository ini ke local
 2. Nyalakan mysql pada xxamp
 3. Buat database dengan nama "test" pada mysql
