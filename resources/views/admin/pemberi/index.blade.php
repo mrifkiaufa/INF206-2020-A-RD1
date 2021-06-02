@@ -1,5 +1,5 @@
 @extends('template.template2')
-@section('title','pemberi')
+@section('title','Pemberi')
 
 @section('isi')
 
