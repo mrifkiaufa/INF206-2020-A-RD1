@@ -127,7 +127,7 @@ class PenerimaController extends Controller
 
     public function aktif()
     {
-        if(User::where('penerima', 1)->count() == Profile::where('status_bayar', 1)->count()){
+        if(User::where('jenis', 'user')->count() == Profile::where('status_bayar', 1)->count()){
             User::where('jenis', 'user')->where('penerima', 1)->update([
                 'tombol_dompet' => 1
             ]);
