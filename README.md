@@ -1,3 +1,12 @@
+Website eZakat - Kelompok RD1 MK RPL 2021
+
+Anggota:
+Fernando Zhahirsyah (1908107010026)
+Choirunisa Romadoni (1908107010030)
+Muhammad Rifki Aufa (1908107010037)
+Muhammad Saifullah Sani (1908107010062)
+Jessika (1908107010074)
+
 Cara mengakses website:
 1. Clone terlebih dahulu repository ini ke local
 2. Nyalakan mysql pada xxamp
