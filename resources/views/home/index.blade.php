@@ -3,7 +3,7 @@
 
 @section('isi')
     <div class="container ms-3 mt-5">
-        <h1 class="artikel">Website Zakat Desa Ie masen</h1>
+        <h1 class="artikel">Website Pembayaran Zakat Desa Ie Masen</h1>
         <p class="artikel">Memudahkan proses pembayaran <br>
         dan penerimaan zakat bagi <br>
         warga-warga Ie Masen</p>
