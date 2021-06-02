@@ -1,5 +1,5 @@
 @extends('template.template2')
-@section('title','pemberi')
+@section('title','Home')
 
 @section('isi')
 <div class="container ms-3 mt-5">
